@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*This names the website tab*@
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@model Entertainer
+
+<h2>Confirm Deletion</h2>
+
+<form method="post">
+
+    <input type="hidden" asp-for="EntertainerId" />
+
+    <button type="submit" class="btn btn-danger">Delete</button> @* self-explanatory *@
+    <a class="btn btn-info" asp-controller="Home" asp-action="EntertainerDetails">Cancel</a> @* self-explanatory *@
+</form>

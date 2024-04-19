@@ -1,0 +1,49 @@
+﻿@model List<Entertainer>
+
+<div class="col-12">
+    <h2 class="mb-3">Entertainer Details</h2>
+    <table class="table table-bordered table-hover table-responsive-sm table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Entertainer ID</th> @* create/name all the columns the data will go into *@
+                <th>Stage Name</th>
+                <th>SSN</th>
+                <th>Street Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>ZipCode</th>
+                <th>Phone Number</th>
+                <th>Web Page</th>
+                <th>Email</th>
+                <th>Date Entered</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var temp in Model) @* fill those columns with the correct info. run through it row by row suing the for loop *@
+            {
+                
+                <tr>
+                    <td>@temp.EntertainerId</td> 
+                    <td>@temp.EntStageName</td>
+                    <td>@temp.EntSsn</td>
+                    <td>@temp.EntStreetAddress</td>
+                    <td>@temp.EntCity</td>
+                    <td>@temp.EntState</td>
+                    <td>@temp.EntZipCode</td>
+                    <td>@temp.EntPhoneNumber</td>
+                    <td>@temp.EntWebPage</td>
+                    <td>@temp.EntEmailAddress</td>
+                    <td>@temp.DateEntered</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Action Buttons">
+                            <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@temp.EntertainerId">Edit</a> @* option to edit that row's info *@
+                            <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-id="@temp.EntertainerId">Delete</a> @* option to delete the row *@
+                        </div>
+                    </td>
+                </tr>
+                
+            }
+        </tbody>
+    </table>
+</div>

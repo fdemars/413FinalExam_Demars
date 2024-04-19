@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*This names the website tab*@
+@{
+    ViewData["Title"] = "New Task";
+}
+
+@model Entertainer
+
+<h1>Create New Entertainer</h1>
+<form method="post">
+    <input type="hidden" asp-for="EntertainerId" />
+
+    <!-- New Entertainer input fields-->      @* input types can be referenced in Models/Entertainer.cs file *@
+    <label asp-for="EntStageName">Stage Name:</label>
+    <input asp-for="EntStageName" />
+
+    <br />
+
+    <label asp-for="EntSsn">SSN:</label>
+    <input type="string" asp-for="EntSsn" />
+
+    <br />
+
+    <label asp-for="EntStreetAddress">Street Address:</label>
+    <input type="string" asp-for="EntStreetAddress" />
+
+    <br />
+
+    <label asp-for="EntCity">City:</label>
+    <input type="string" asp-for="EntCity" />
+
+    <br />
+
+    <label asp-for="EntState">State:</label>
+    <input type="string" asp-for="EntState" />
+
+    <br />
+
+    <label asp-for="EntZipCode">Zipcode:</label>
+    <input type="string" asp-for="EntZipCode" />
+
+    <br />
+
+    <label asp-for="EntPhoneNumber">Phone Number:</label>
+    <input type="string" asp-for="EntPhoneNumber" />
+
+    <br />
+
+    <label asp-for="EntWebPage">Web Page:</label>
+    <input type="string" asp-for="EntWebPage" />
+
+    <br />
+
+    <label asp-for="EntEmailAddress">Email Address:</label>
+    <input type="string" asp-for="EntEmailAddress" />
+    
+    <br />
+
+    <label asp-for="DateEntered">Date Entered:</label>
+    <input type="date" asp-for="DateEntered" />
+
+    <br />
+
+    <button type="submit">Submit</button> @* saves new entertainer data to the database
+ *@
+</form>

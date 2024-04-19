@@ -1,0 +1,35 @@
+﻿@model List<Entertainer>
+
+<div class="col-12"> @* use bootstrap formatting to organize webpage *@
+    <h2 class="mb-3">Avaliable Entertainers</h2>
+    <table class="table table-bordered table-hover table-responsive-sm table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Entertainer Stage Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var temp in Model) @* for each row, list out a unique EntStageName from the database *@
+            {
+                <tr>
+                    <td>@temp.EntStageName</td>
+
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Action Buttons">
+                            <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="EntertainerDetails" asp-route-id="@temp.EntStageName">Details</a> @* btn which goes to the EntertainerDetails View *@
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<br />
+<br />
+
+<div>
+    <a class="btn btn-info btn-sm" asp-controller="Home" asp-action="NewEntertainer">Add New Entertainer</a> @* btn which goes to the NewEntertainer View *@
+
+</div>
